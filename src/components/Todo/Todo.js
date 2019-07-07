@@ -18,16 +18,16 @@ class TodoUI extends React.Component {
     });
   };
 
-  onEditClick = () => {
-    this.props.setCurrentEditableTodo(this.props.todo);
+  onEditClick = (toReset) => {
+    this.props.setCurrentEditableTodo(toReset ? null : this.props.todo);
   };
 
   onDeleteClick = () => {
-    this.props.deleteTodo({id: this.props.todo.id});
+    this.props.deleteTodo(this.props.todo.id);
   };
 
-  onClose = () => {
-    this.props.setCurrentEditableTodo(null);
+  onSaveClick = (updatedTodo) => {
+    this.props.updateTodo(updatedTodo);
   };
 
   render() {
@@ -38,9 +38,10 @@ class TodoUI extends React.Component {
         {
           currentEditableTodo && currentEditableTodo.id === this.props.todo.id
             ? <TodoExtendedRow todo={this.props.todo}
-                               onClose={this.onClose}
+                               onClose={() => this.onEditClick(true)}
+                               onDeleteClick={this.onDeleteClick}
                                onCompleteClick={this.onCompleteClick}
-                               onEditClick={this.onEditClick}
+                               onSaveClick={this.onSaveClick}
               />
             : <TodoRow {...this.props.todo}
                        onCompleteClick={this.onCompleteClick}

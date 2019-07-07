@@ -10,10 +10,16 @@
     border: none;
 }
 
+.todo-extended__top-wrap {
+    position: relative;
+}
+
 .todo-extended__header {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    z-index: 100;
 }
 .todo-extended__header-close-btn {
     display: flex;
@@ -30,7 +36,6 @@
 }
 
 .todo-extended__content {
-    position: relative;
     flex-basis: 100%;
 }
 
@@ -57,9 +62,15 @@
 
 .todo-extended__content-cover {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 45px;
+    font-weight: 600;
+    color: #d9d9d9;
     z-index: 100;
 }
 

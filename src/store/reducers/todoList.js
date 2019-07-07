@@ -32,7 +32,7 @@ const initTodo = {
   priority: priority.ORDINARY,
   isCompleted: false,
   isDateRequired: false,
-  completeUntilDateTime: null,
+  completeByDateTime: null,
   completedDateTime: null
 };
 

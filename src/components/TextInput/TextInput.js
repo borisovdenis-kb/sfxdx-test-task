@@ -1,5 +1,6 @@
 import React from 'react';
 import './TextInput.css';
+import {Label} from "../Label/Label";
 
 export function TextInput({value, label, name, width, height, onChange}) {
   const styles = {width, height};
@@ -20,7 +21,7 @@ export function TextInput({value, label, name, width, height, onChange}) {
              value={value}
              onChange={onInputChange}
       />
-      {Boolean(label) && <div className="text-input__label">{label}</div>}
+      <Label label={label} />
     </div>
   );
 }
