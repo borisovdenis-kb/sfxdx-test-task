@@ -1,10 +1,16 @@
 import { createStore } from "redux";
 import { rootReducer } from "./reducers";
 
+const state = JSON.parse(localStorage.getItem('todoList'));
+
 export const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  state || {}
 );
+
+store.subscribe(() => {
+  localStorage.setItem('todoList', JSON.stringify(store.getState()));
+});
 
 export * from './reducers';
 export * from './actions';
