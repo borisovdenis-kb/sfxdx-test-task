@@ -3,12 +3,6 @@ import {priority} from "../../constants/todo";
 import {combineReducers} from "redux";
 import {getNextId} from "../../sirvices/utils";
 
-// const todoIndex = (todoList, todo) => {
-//   for (let i = 0; i < todoList.length; i++) {
-//     if (todoList[i])
-//   }
-// }
-
 const items = (state = [], action) => {
   switch (action.type) {
     case actionTypes.ADD_TODO:
@@ -24,6 +18,8 @@ const items = (state = [], action) => {
 
         return todo;
       });
+    case actionTypes.DELETE_TODO:
+      return state.filter(todo => todo.id !== action.data.id);
     default:
       return state;
   }

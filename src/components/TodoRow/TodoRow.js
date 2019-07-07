@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from "../Button/Button";
 import {Checkbox} from "../Checkbox/Checkbox";
-import {updateTodo} from "../../store";
+import {deleteTodo, updateTodo} from "../../store";
 
 import './TodoRow.css';
 import {connect} from "react-redux";
@@ -16,6 +16,10 @@ function TodoRowUI(props) {
     }));
   };
 
+  const onDeleteClick = () => {
+    dispatch(deleteTodo({id: props.id}));
+  };
+
   return (
     <div className="todo">
       <div className="todo__column todo__complete">
@@ -28,7 +32,7 @@ function TodoRowUI(props) {
         <Button width="25px" height="25px" />
       </div>
       <div className="todo__column todo__delete">
-        <Button width="25px" height="25px" />
+        <Button width="25px" height="25px" onClick={onDeleteClick}/>
       </div>
     </div>
   );

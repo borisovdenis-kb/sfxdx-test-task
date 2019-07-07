@@ -15,9 +15,9 @@ class TodoListUI extends React.Component {
 
     return (
       <div className="todo-list app__width-container common-border">
-        {Boolean(todoList.length) ? filteredTodoList.map(todo => (
+        {filteredTodoList.map(todo => (
           <TodoRow {...todo} key={todo.id}/>
-        )) : <div>There is nothing to do</div>}
+        ))}
       </div>
     );
   }
