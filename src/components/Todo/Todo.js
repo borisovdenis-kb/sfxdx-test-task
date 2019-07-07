@@ -1,5 +1,5 @@
 import React from 'react';
-import {deleteTodo, updateTodo} from "../../store";
+import {deleteTodo, updateTodo, setCurrentEditableTodo} from "../../store";
 import {connect} from "react-redux";
 import {TodoRow} from "./TodoRow/TodoRow";
 import {TodoExtendedRow} from "./TodoExtendedRow/TodoExtendedRow";
@@ -9,33 +9,36 @@ import './Todo.css';
 class TodoUI extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      isEditMode: false
-    }
   }
 
   onCompleteClick = ({value}) => {
-    this.props.dispatch(updateTodo({
+    this.props.updateTodo({
       id: this.props.todo.id,
       isCompleted: value
-    }));
+    });
   };
 
   onEditClick = () => {
-    this.setState(state => ({isEditMode: !state.isEditMode}));
+    this.props.setCurrentEditableTodo(this.props.todo);
   };
 
   onDeleteClick = () => {
-    this.props.dispatch(deleteTodo({id: this.props.todo.id}));
+    this.props.deleteTodo({id: this.props.todo.id});
+  };
+
+  onClose = () => {
+    this.props.setCurrentEditableTodo(null);
   };
 
   render() {
+    const {currentEditableTodo} = this.props;
+
     return (
       <React.Fragment>
         {
-          this.state.isEditMode
+          currentEditableTodo && currentEditableTodo.id === this.props.todo.id
             ? <TodoExtendedRow todo={this.props.todo}
+                               onClose={this.onClose}
                                onCompleteClick={this.onCompleteClick}
                                onEditClick={this.onEditClick}
               />
@@ -50,4 +53,13 @@ class TodoUI extends React.Component {
   }
 }
 
-export const Todo = connect()(TodoUI);
+export const Todo = connect(
+  state => ({
+    currentEditableTodo: state.todoList.currentEditableTodo
+  }),
+  dispatch => ({
+    updateTodo: (id, isCompleted) => dispatch(updateTodo(id, isCompleted)),
+    deleteTodo: (id) => dispatch(deleteTodo({id})),
+    setCurrentEditableTodo: (todo) => dispatch(setCurrentEditableTodo(todo))
+  })
+)(TodoUI);

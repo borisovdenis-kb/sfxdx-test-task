@@ -51,6 +51,15 @@ const todo = (state, action) => {
   }
 };
 
+const currentEditableTodo = (state = null, action) => {
+  switch (action.type) {
+    case actionTypes.SET_CURRENT_EDITABLE_TODO:
+      return action.data;
+    default:
+      return state;
+  }
+};
+
 const initShowOnly = [
   priority.ORDINARY,
   priority.IMPORTANT,
@@ -73,5 +82,6 @@ const showOnly = (state = initShowOnly, action) => {
 
 export const todoList = combineReducers({
   items,
+  currentEditableTodo,
   showOnly
 });

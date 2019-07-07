@@ -3,3 +3,4 @@ export const UPDATE_TODO = 'UPDATE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 export const ADD_FILTER = 'ADD_FILTER';
 export const REMOVE_FILTER = 'REMOVE_FILTER';
+export const SET_CURRENT_EDITABLE_TODO = 'SET_CURRENT_EDITABLE_TODO';

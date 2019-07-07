@@ -47,12 +47,7 @@ export class TodoExtendedRow extends React.Component {
     return (
       <div className="todo-extended">
         <div className="todo-extended__header">
-          <Button icon={CLOSE}
-                  theme="simple"
-                  width="35px"
-                  height="35px"
-                  onClick={this.props.onEditClick}
-          />
+          <div className="todo-extended__header-close-btn" onClick={this.props.onClose}>✖</div>
         </div>
         <div className="todo-extended__content">
           {this.state.isCompleted && <div className="todo-extended__content-cover" />}
