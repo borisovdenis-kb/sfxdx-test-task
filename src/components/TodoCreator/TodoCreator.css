@@ -1,0 +1,37 @@
+.todo-creator {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -50px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+}
+
+.todo-creator__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+}
+
+.todo-creator__control-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-basis: 100%;
+    padding-top: 20px;
+}
+
+.todo-creator__input-container {
+    flex-basis: 100%;
+}
+
+.todo-creator__btn-container {
+    margin-left: 20px;
+}

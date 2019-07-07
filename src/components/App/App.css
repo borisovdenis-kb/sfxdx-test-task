@@ -1,5 +1,18 @@
-.App {
+.app {
   width: 100%;
   height: 100%;
   text-align: center;
+}
+
+.app__content-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  /*background-color: #54d682;*/
+}
+
+.app__width-container {
+  width: 750px;
 }
