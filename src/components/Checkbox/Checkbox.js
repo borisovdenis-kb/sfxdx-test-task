@@ -2,9 +2,9 @@ import React from 'react';
 import {iconsSrc} from "../../constants/icons";
 import './Checkbox.css';
 
-export function Checkbox({value, name, onCllick}) {
+export function Checkbox({value, name, onClick}) {
   const onCheckClick = () => {
-    onCllick({
+    onClick({
       name,
       value: !value
     });

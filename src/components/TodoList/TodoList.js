@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {TodoRow} from "../TodoRow/TodoRow";
+import {Todo} from "../Todo/Todo";
 
 import './TodoList.css';
 
@@ -16,7 +16,7 @@ class TodoListUI extends React.Component {
     return (
       <div className="todo-list app__width-container common-border">
         {filteredTodoList.map(todo => (
-          <TodoRow {...todo} key={todo.id}/>
+          <Todo todo={todo} key={todo.id}/>
         ))}
       </div>
     );

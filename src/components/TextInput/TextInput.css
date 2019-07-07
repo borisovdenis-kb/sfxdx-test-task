@@ -6,3 +6,8 @@
     font-size: 1.1em;
     color: #2f83ae;
 }
+
+.text-input__label {
+    margin-top: 5px;
+    color: #b0b0b0;
+}

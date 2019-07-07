@@ -4,17 +4,46 @@
     align-items: center;
     width: 70px;
     height: 35px;
-    background-color: #2f83ae;
     cursor: pointer;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.button-simple {
+    background-color: none;
+}
+
+.button-simple:hover {
+    background-color: none;
+}
+
+.button-normal {
+    background-color: #2f83ae;
+}
+
+.button-normal:hover {
+    background-color: #2d729b;
+}
+
+.button-ok {
+    background-color: #4fd27b;
+}
+
+.button-ok:hover {
+    background-color: #42aa61;
+}
+
+.button-alert {
+    background-color: #d24852;
+}
+
+.button-alert:hover {
+    background-color: #b1404a;
 }
 
 .button--disabled {
     background-color: #b0b0b0;
     opacity: 0.4;
-}
-
-.button:hover {
-    background-color: #2d729b;
 }
 
 .button--disabled:hover {
