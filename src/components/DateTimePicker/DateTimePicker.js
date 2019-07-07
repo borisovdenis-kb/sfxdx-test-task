@@ -15,9 +15,14 @@ export class DateTimePicker extends React.Component {
   render() {
     const {value, label, onChange} = this.props;
 
+    const disableDate = (date) => {
+      return date < new Date();
+    };
+
     return (
       <div>
         <Flatpickr data-enable-time
+                   options={{disable: [disableDate]}}
                    value={value}
                    onChange={date => { onChange({name: 'completeByDateTime', value: date}) }}
         />
