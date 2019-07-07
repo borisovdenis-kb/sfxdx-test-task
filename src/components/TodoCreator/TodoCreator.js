@@ -24,6 +24,7 @@ class TodoCreatorUI extends React.Component {
     this.props.dispatch(addTodo({
       title: this.state.todoTitle
     }));
+    this.setState({todoTitle: ''});
   };
 
   render() {
