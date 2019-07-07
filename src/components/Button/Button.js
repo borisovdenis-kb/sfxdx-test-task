@@ -13,7 +13,7 @@ export function Button({icon, width, height, isDisabled, onClick}) {
 
   return (
     <div className={classes} style={styles} onClick={onClick}>
-      <img src={iconsSrc[icon]}/>
+      <img src={iconsSrc[icon]} alt=""/>
     </div>
   );
 }

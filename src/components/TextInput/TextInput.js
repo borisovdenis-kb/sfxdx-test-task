@@ -13,6 +13,7 @@ export function TextInput({value, onChange, name, width, height}) {
 
   return (
     <input className="text-input common-border"
+           name={name}
            style={styles}
            type="text"
            value={value}

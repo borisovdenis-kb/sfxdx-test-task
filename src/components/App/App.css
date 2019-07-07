@@ -1,18 +1,31 @@
 .app {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  text-align: center;
 }
 
 .app__content-container {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  min-height: 100%;
-  /*background-color: #54d682;*/
+  height: 100%;
+  overflow: scroll;
 }
 
 .app__width-container {
   width: 750px;
+}
+
+.app__todo-list-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  color: #cfcfcf;
 }
