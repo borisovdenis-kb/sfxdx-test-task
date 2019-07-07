@@ -3,6 +3,7 @@ import {Checkbox} from "../../Checkbox/Checkbox";
 import {Button} from "../../Button/Button";
 import {status} from "../../../constants/todo";
 import {TodoStatusBadge} from "../TodoStatusBadge/TodoStatusBadge";
+import {EDIT, DELETE} from "../../../constants/icons";
 
 import './TodoRow.css';
 
@@ -34,10 +35,20 @@ export function TodoRow(props) {
         </div>
       }
       <div className="todo__column todo__edit">
-        <Button width="25px" height="25px" onClick={props.onEditClick}/>
+        <Button theme="simple"
+                icon={EDIT}
+                width="25px"
+                height="25px"
+                onClick={props.onEditClick}
+        />
       </div>
       <div className="todo__column todo__delete">
-        <Button width="25px" height="25px" onClick={props.onDeleteClick}/>
+        <Button theme="simple"
+                icon={DELETE}
+                width="25px"
+                height="25px"
+                onClick={props.onDeleteClick}
+        />
       </div>
     </div>
   );

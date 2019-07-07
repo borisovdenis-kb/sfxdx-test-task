@@ -24,7 +24,7 @@ export function Button({
   });
   const noop = () => {};
 
-  const innerBlock = icon ? <img src={iconsSrc[icon]} alt=""/> : title;
+  const innerBlock = icon ? <img className="button__icon" src={iconsSrc[icon]} alt=""/> : title;
 
   return (
     <div className={classes} style={styles} onClick={() => isDisabled ? noop() : onClick()}>
