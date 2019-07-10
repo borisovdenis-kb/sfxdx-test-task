@@ -1,0 +1,22 @@
+.todo-filter {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 80px;
+    user-select: none;
+}
+
+.todo-filter__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.todo-filter__item--selected {
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}

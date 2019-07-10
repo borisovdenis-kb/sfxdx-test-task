@@ -61,9 +61,9 @@ const currentEditableTodo = (state = null, action) => {
 };
 
 const initShowOnly = [
-  priority.ORDINARY,
-  priority.IMPORTANT,
-  priority.VERY_IMPORTANT
+  // priority.ORDINARY,
+  // priority.IMPORTANT,
+  // priority.VERY_IMPORTANT
 ];
 
 const showOnly = (state = initShowOnly, action) => {
@@ -71,10 +71,7 @@ const showOnly = (state = initShowOnly, action) => {
     case actionTypes.ADD_FILTER:
       return [...state, action.data];
     case actionTypes.REMOVE_FILTER:
-      return [
-        ...state.slice(state.indexOf(action.data)),
-        ...state.slice(state.indexOf(action.data) + 1),
-      ];
+      return state.filter(item => item !== action.data);
     default:
       return state;
   }
