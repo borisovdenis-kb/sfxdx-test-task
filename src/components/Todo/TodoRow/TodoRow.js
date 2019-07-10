@@ -25,9 +25,14 @@ export function TodoRow(props) {
       <div className="todo__column todo__title">
         {props.title}
       </div>
-      <div className="todo__column">
-        {todoStatusList.map(status => <TodoStatusBadge key={status} status={status}/>)}
+      <div className="todo__column todo__priority">
+        {props.priority}
       </div>
+      {
+        Boolean(todoStatusList.length) && <div className="todo__column todo__status">
+          {todoStatusList.map(status => <TodoStatusBadge key={status} status={status}/>)}
+        </div>
+      }
       <div className="todo__column todo__edit">
         <Button width="25px" height="25px" onClick={props.onEditClick}/>
       </div>

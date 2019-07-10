@@ -35,6 +35,10 @@ export class TodoExtendedRow extends React.Component {
     }
   }
 
+  onPriorityChange = ({target}) => {
+    this.onDataChange({name: target.name, value: target.value});
+  };
+
   onDataChange = ({name, value}) => {
     this.setState({
       [name]: value
@@ -59,23 +63,34 @@ export class TodoExtendedRow extends React.Component {
               <TextInput name="title"
                          label="Title"
                          height="30px"
+                         width="300px"
                          value={this.state.title}
                          onChange={this.onDataChange}
+              />
+              <select name="priority"
+                      className="select common-border"
+                      value={this.state.priority}
+                      onChange={this.onPriorityChange}>
+                <option>{priority.ORDINARY}</option>
+                <option>{priority.IMPORTANT}</option>
+                <option>{priority.VERY_IMPORTANT}</option>
+              </select>
+            </div>
+            <div className="todo-extended__content-row">
+              <DateTimePicker height="30px"
+                              width="300px"
+                              label="Complete Before Date"
+                              value={this.state.completeByDateTime}
+                              onChange={this.onDataChange}
               />
             </div>
             <div className="todo-extended__content-row">
               <TextInput name="description"
                          label="Description"
                          height="30px"
+                         width="300px"
                          value={this.state.description}
                          onChange={this.onDataChange}
-              />
-            </div>
-            <div className="todo-extended__content-row">
-              <DateTimePicker height="30px"
-                              label="Complete Before Date"
-                              value={this.state.completeByDateTime}
-                              onChange={this.onDataChange}
               />
             </div>
           </div>

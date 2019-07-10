@@ -27,14 +27,22 @@
     overflow: hidden;
 }
 
-.todo__complete {
+.todo__priority {
+    padding-right: 20px;
+}
 
+.todo__complete {
+    padding-right: 20px;
+}
+
+.todo__status {
+    padding-right: 20px;
 }
 
 .todo__edit {
-    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .todo__delete {
-    padding-left: 20px;
+    /*padding-left: 20px;*/
 }
