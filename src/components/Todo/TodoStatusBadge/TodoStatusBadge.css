@@ -1,0 +1,14 @@
+.todo-status-badge {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
+.todo-status-badge--ok {
+    background-color: #4fd27b;
+}
+
+.todo-status-badge--alarm {
+    background-color: #d24852;
+}

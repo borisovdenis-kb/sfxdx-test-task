@@ -5,10 +5,6 @@ import {Todo} from "../Todo/Todo";
 import './TodoList.css';
 
 class TodoListUI extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {todoList, showOnly} = this.props;
     const filteredTodoList = todoList.filter(item => showOnly.indexOf(item.priority) > -1);

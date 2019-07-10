@@ -3,3 +3,8 @@ export const priority = {
   IMPORTANT: 'IMPORTANT',
   VERY_IMPORTANT: 'VERY_IMPORTANT'
 };
+
+export const status = {
+  EXPIRED: 'EXPIRED',
+  COMPLETED: 'COMPLETED'
+};

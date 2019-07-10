@@ -7,10 +7,6 @@ import {TodoExtendedRow} from "./TodoExtendedRow/TodoExtendedRow";
 import './Todo.css';
 
 class TodoUI extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   onCompleteClick = ({value}) => {
     this.props.updateTodo({
       id: this.props.todo.id,
